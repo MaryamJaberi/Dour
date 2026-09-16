@@ -1,0 +1,24 @@
+{
+  "name": "دور | Turn - بازی کلمات گروهی",
+  "short_name": "دور - Turn",
+  "description": "بازی گروهی کلمات و حدس هیجان‌انگیز کلمات در دورهمی‌ها",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#241442",
+  "theme_color": "#241442",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

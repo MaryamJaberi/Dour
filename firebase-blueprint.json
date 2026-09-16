@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with game preferences and sync data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastLoginAt": { "type": "string", "format": "date-time" },
+        "totalGamesPlayed": { "type": "number" },
+        "settings": { "type": "object" }
+      },
+      "required": ["uid", "createdAt"]
+    },
+    "GameMatch": {
+      "title": "GameMatch",
+      "description": "Recorded match result and statistics",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "winnerNames": { "type": "array", "items": { "type": "string" } },
+        "winnerColor": { "type": "string" },
+        "players": { "type": "array", "items": { "type": "string" } },
+        "roundsCount": { "type": "number" },
+        "difficulty": { "type": "string" },
+        "language": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "date", "winnerNames", "winnerColor", "players"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Individual user document containing settings and profile"
+    },
+    "/users/{userId}/matches/{matchId}": {
+      "schema": "GameMatch",
+      "description": "Match history records owned by the user"
+    }
+  }
+}
